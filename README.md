@@ -54,7 +54,7 @@ git clone <repository_url>
 Navigate to the project directory:
 bash
 
-cd <project_directory>
+cd Deploying-a-Scalable-WordPress
 Initialize Terraform:
 bash
 
