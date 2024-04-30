@@ -52,9 +52,12 @@ bash
 
 git clone https://github.com/HardikNagrale/Deploying-a-Scalable-WordPress.git
 Navigate to the project directory:
+
 bash
 
 cd Deploying-a-Scalable-WordPress
+
+
 Initialize Terraform:
 bash
 
