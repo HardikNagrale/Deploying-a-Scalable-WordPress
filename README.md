@@ -1,24 +1,37 @@
-Scalable WordPress Site Deployment on AWS using Terraform
+**Scalable WordPress Site Deployment on AWS using Terraform**
+
 This project serves as a guide for deploying a scalable WordPress site on AWS using Terraform. It establishes an architecture where WordPress runs on EC2 instances, managed by an Elastic Load Balancer (ELB), and a MySQL database is hosted on Amazon RDS. Additionally, it integrates with AWS Route 53 for DNS management and AWS Certificate Manager (ACM) for SSL/TLS certificate provisioning.
 
-Architecture Overview
+**Architecture Overview**
+
 The architecture comprises several key components:
 
-VPC Setup: The Virtual Private Cloud (VPC) is configured with public and private subnets across multiple Availability Zones (AZs) for fault tolerance.
-Database: Amazon RDS is utilized to deploy a MySQL database in a private subnet, ensuring data security.
-Web Servers: EC2 instances, running WordPress, are deployed in public subnets behind an Elastic Load Balancer (ELB) to distribute incoming traffic.
-Elastic Load Balancer (ELB): The ELB evenly distributes traffic among EC2 instances to ensure high availability and scalability.
-Auto Scaling Group: This automatically adjusts the number of EC2 instances based on load, ensuring optimal performance.
-Security Groups: Security rules are defined to control access to EC2 instances and the RDS database, ensuring network security.
-DNS Configuration: Route 53 is used to manage the domain and route traffic to the ELB.
-SSL/TLS Setup: ACM provisions SSL/TLS certificates and associates them with the ELB to enable secure connections.
-How to Deploy
+1. VPC Setup: The Virtual Private Cloud (VPC) is configured with public and private subnets across multiple Availability Zones (AZs) for fault tolerance.
+
+2. Database: Amazon RDS is utilized to deploy a MySQL database in a private subnet, ensuring data security.
+
+3. Web Servers: EC2 instances, running WordPress, are deployed in public subnets behind an Elastic Load Balancer (ELB) to distribute incoming traffic.
+
+4. Elastic Load Balancer (ELB): The ELB evenly distributes traffic among EC2 instances to ensure high availability and scalability.
+
+5. Auto Scaling Group: This automatically adjusts the number of EC2 instances based on load, ensuring optimal performance.
+
+6. Security Groups: Security rules are defined to control access to EC2 instances and the RDS database, ensuring network security.
+
+7. DNS Configuration: Route 53 is used to manage the domain and route traffic to the ELB.
+
+8. SSL/TLS Setup: ACM provisions SSL/TLS certificates and associates them with the ELB to enable secure connections.
+
+**How to Deploy**
+
 Prerequisites
 Install Terraform: Follow the official Terraform installation guide here.
+
 Linux/macOS:
 Download the appropriate package for your operating system from the Terraform website.
 Unzip the downloaded package.
 Move the executable file to a directory included in your system's PATH.
+
 Windows:
 Download the appropriate package for your operating system from the Terraform website.
 Extract the downloaded zip file.
@@ -28,12 +41,14 @@ Terraform AWS Configuration
 AWS IAM User: Create an IAM user with programmatic access and assign the necessary permissions (e.g., AmazonEC2FullAccess, AmazonRDSFullAccess, AmazonRoute53FullAccess, IAMFullAccess).
 Access Key and Secret Key: Obtain the access key ID and secret access key for the IAM user.
 Connect Terraform to AWS
+
 Environment Variables:
 Set the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables with the IAM user's access key ID and secret access key, respectively.
 bash
 
 export AWS_ACCESS_KEY_ID=<your_access_key_id>
 export AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+
 Terraform Configuration File:
 Alternatively, you can configure Terraform to use AWS credentials from the shared credentials file (~/.aws/credentials).
 Open the ~/.aws/credentials file and add the IAM user's access key ID and secret access key under a profile name (e.g., [terraform]).
