@@ -77,20 +77,25 @@ Initialize Terraform:
 bash
 
 terraform init
+
 Review and modify variables: Open the variables.tf file and adjust variables according to your requirements.
+
 Plan the deployment:
 bash
 
 terraform plan
+
 Deploy the infrastructure:
 bash
 
 terraform apply
+
 Confirm the deployment: Follow the on-screen instructions to confirm the deployment.
 Making Changes
 To make changes to the infrastructure:
 
-Update the variables: Open the variables.tf file and modify variables as needed.
+Update the variables: 
+Open the variables.tf file and modify variables as needed.
 Re-run the deployment steps:
 bash
 
