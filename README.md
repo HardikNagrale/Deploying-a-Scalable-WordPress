@@ -50,7 +50,7 @@ Deployment Steps
 Clone this repository:
 bash
 
-git clone <repository_url>
+git clone https://github.com/HardikNagrale/Deploying-a-Scalable-WordPress.git
 Navigate to the project directory:
 bash
 
